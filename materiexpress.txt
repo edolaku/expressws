@@ -14,3 +14,11 @@ app
     .listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`)
     })
+
+
+install nodemon agar kita tidak perlu menghentikan dan menjalankan ulang terminal jika app.js diedit
+setelah diinstall nodemon, maka untuk menjalankan pada terminal, kita sekarang menggunakan perintah "nodemon app", tidak lagi menggunakan "node app"
+
+pada express, sering sekali parameter menggunakan req dan res yg berarti request dan response, penjelasannya adalah:
+res => apa yg dikembalikan dari express ketika kita mentarget path/alamat yg dimasukkan (alamat tertentu)
+req => apa yg dikirimkan ke express-nya

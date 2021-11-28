@@ -4,15 +4,23 @@ const port = 3000
 
 app
     .get('/', (req, res) => {
-        res.send('Hello World!')
+        // cara untuk menampilkan index.html root adalah lokasi dimana tempat file index.html berada
+        res.sendFile("./index.html", { root: __dirname });
     })
+
     .get('/about', (req, res) => {
-        res.send('Hello World! About')
+        res.send('Hello World! About');
+    })
+
+    // methode .use digunakan seperti default get, maka jika tidak ada get yg diminta, otomatis akan dimasukkan ke .use
+    .use("/", (req, res) => {
+        res.send(404);
     })
 
     .listen(port, () => {
-        console.log(`Example app listening at http://localhost:${port}`)
+        console.log(`Example app listening at http://localhost:${port}`);
     })
+
 
 
 // // Membuat secara lebih ringkas dibanding appcopy.js
